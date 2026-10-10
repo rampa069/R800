@@ -78,6 +78,9 @@ hours): `make zexdoc`, `make zexall`. The zexall CRCs of the R800 differ from
 the Z80 ones; `zexcmp.py openmsx.log zexall.log` compares them with a run of
 openMSX with an R800 (a log of the BDOS calls).
 
+`results/` has the zexdoc / zexall output of the core on a SiDi128 board: the
+same CRCs as openMSX with an R800 and as the model.
+
 Simulation notes: with an event driven simulator (nvc, iverilog) the registers
 are initialised in `initial` blocks, not in their declaration.
 

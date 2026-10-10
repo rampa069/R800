@@ -1,0 +1,140 @@
+NEXTOR.SYS version 2.12
+Copyright (2021) Konamiman
+
+Z80 instruction exerciser
+Z80 instruction exerciser
+<adc,sbc> hl,<bc,de,hl,sp>....<adc,sbc> hl,<bc,de,hl,sp>....  ERROR **** crc expected:  ERROR **** crc expected:dd4488aadd551199 found: found:ff3399008899aa00
+
+add hl,<bc,de,hl,sp>..........add hl,<bc,de,hl,sp>..........  ERROR **** crc expected:  ERROR **** crc expected:dd99aa44ccaa0055 found: found:11116655ffcc9900
+
+add ix,<bc,de,ix,sp>..........add ix,<bc,de,ix,sp>..........  ERROR **** crc expected:  ERROR **** crc expected:bb11ddff88eecc00 found: found:cc335599ff77aa22
+
+add iy,<bc,de,iy,sp>..........add iy,<bc,de,iy,sp>..........  ERROR **** crc expected:  ERROR **** crc expected:3399cc88558899bb found: found:55ffcc882288ee99
+
+aluop a,nn....................aluop a,nn....................  ERROR **** crc expected:  ERROR **** crc expected:5511cc1199cc22ee found: found:4488779999336600
+
+aluop a,<b,c,d,e,h,l,(hl),a>..aluop a,<b,c,d,e,h,l,(hl),a>..  ERROR **** crc expected:  ERROR **** crc expected:0066cc77aaaa88ee found: found:ffee4433bb001166
+
+aluop a,<ixh,ixl,iyh,iyl>.....aluop a,<ixh,ixl,iyh,iyl>.....  ERROR **** crc expected:  ERROR **** crc expected:aa888866cccc4444 found: found:aa44002266dd55aa
+
+aluop a,(<ix,iy>+1)...........aluop a,(<ix,iy>+1)...........  ERROR **** crc expected:  ERROR **** crc expected:dd33ff22dd7744aa found: found:ee884499667766ee
+
+bit n,(<ix,iy>+1).............bit n,(<ix,iy>+1).............  ERROR **** crc expected:  ERROR **** crc expected:8833553344eeee11 found: found:aa88eeee00886677
+
+bit n,<b,c,d,e,h,l,(hl),a>....bit n,<b,c,d,e,h,l,(hl),a>....  ERROR **** crc expected:  ERROR **** crc expected:55ee002200ee9988 found: found:77bb5555ee66cc88
+
+cpd<r>........................cpd<r>........................  ERROR **** crc expected:  ERROR **** crc expected:113344bb662222dd found: found:aa8877ee66ccffaa
+
+cpi<r>........................cpi<r>........................  ERROR **** crc expected:  ERROR **** crc expected:22ddaa4422dd1199 found: found:0066ddeebb335566
+
+<daa,cpl,scf,ccf>.............<daa,cpl,scf,ccf>.............  ERROR **** crc expected:  ERROR **** crc expected:66dd22dddd221133 found: found:3311225555bbff55
+
+<inc,dec> a...................<inc,dec> a...................  ERROR **** crc expected:  ERROR **** crc expected:8811ffaa88110000 found: found:dd1188881155aa44
+
+<inc,dec> b...................<inc,dec> b...................  ERROR **** crc expected:  ERROR **** crc expected:7777ff3355aa7733 found: found:55ff668822226644
+
+<inc,dec> bc..................<inc,dec> bc..................  OK
+  OK
+<inc,dec> c...................<inc,dec> c...................  ERROR **** crc expected:  ERROR **** crc expected:11aaff661122aa77 found: found:cc228844555544cc
+
+<inc,dec> d...................<inc,dec> d...................  ERROR **** crc expected:  ERROR **** crc expected:dd114466bbff5511 found: found:44552233ddee1100
+
+<inc,dec> de..................<inc,dec> de..................  OK
+  OK
+<inc,dec> e...................<inc,dec> e...................  ERROR **** crc expected:  ERROR **** crc expected:ccaa88cc66aacc22 found: found:ee117755aaffcccc
+
+<inc,dec> h...................<inc,dec> h...................  ERROR **** crc expected:  ERROR **** crc expected:556600ff995555ee found: found:11cceedd884477dd
+
+<inc,dec> hl..................<inc,dec> hl..................  OK
+  OK
+<inc,dec> ix..................<inc,dec> ix..................  OK
+  OK
+<inc,dec> iy..................<inc,dec> iy..................  OK
+  OK
+<inc,dec> l...................<inc,dec> l...................  ERROR **** crc expected:  ERROR **** crc expected:aa00aa11bb4499ff found: found:5566ccdd0066ff33
+
+<inc,dec> (hl)................<inc,dec> (hl)................  ERROR **** crc expected:  ERROR **** crc expected:2288229955eeccee found: found:bb8833aaddcceeff
+
+<inc,dec> sp..................<inc,dec> sp..................  OK
+  OK
+<inc,dec> (<ix,iy>+1).........<inc,dec> (<ix,iy>+1).........  ERROR **** crc expected:  ERROR **** crc expected:00bb9955aa88eeaa found: found:2200558811447700
+
+<inc,dec> ixh.................<inc,dec> ixh.................  OK
+  OK
+<inc,dec> ixl.................<inc,dec> ixl.................  OK
+  OK
+<inc,dec> iyh.................<inc,dec> iyh.................  OK
+  OK
+<inc,dec> iyl.................<inc,dec> iyl.................  ERROR **** crc expected:  ERROR **** crc expected:3366cc1111ee7755 found: found:ffbbccbbbbaa9955
+
+ld <bc,de>,(nnnn).............ld <bc,de>,(nnnn).............  OK
+  OK
+ld hl,(nnnn)..................ld hl,(nnnn)..................  OK
+  OK
+ld sp,(nnnn)..................ld sp,(nnnn)..................  OK
+  OK
+ld <ix,iy>,(nnnn).............ld <ix,iy>,(nnnn).............  OK
+  OK
+ld (nnnn),<bc,de>.............ld (nnnn),<bc,de>.............  OK
+  OK
+ld (nnnn),hl..................ld (nnnn),hl..................  OK
+  OK
+ld (nnnn),sp..................ld (nnnn),sp..................  OK
+  OK
+ld (nnnn),<ix,iy>.............ld (nnnn),<ix,iy>.............  OK
+  OK
+ld <bc,de,hl,sp>,nnnn.........ld <bc,de,hl,sp>,nnnn.........  OK
+  OK
+ld <ix,iy>,nnnn...............ld <ix,iy>,nnnn...............  OK
+  OK
+ld a,<(bc),(de)>..............ld a,<(bc),(de)>..............  OK
+  OK
+ld <b,c,d,e,h,l,(hl),a>,nn....ld <b,c,d,e,h,l,(hl),a>,nn....  OK
+  OK
+ld (<ix,iy>+1),nn.............ld (<ix,iy>+1),nn.............  OK
+  OK
+ld <b,c,d,e>,(<ix,iy>+1)......ld <b,c,d,e>,(<ix,iy>+1)......  OK
+  OK
+ld <h,l>,(<ix,iy>+1)..........ld <h,l>,(<ix,iy>+1)..........  OK
+  OK
+ld a,(<ix,iy>+1)..............ld a,(<ix,iy>+1)..............  OK
+  OK
+ld <ixh,ixl,iyh,iyl>,nn.......ld <ixh,ixl,iyh,iyl>,nn.......  OK
+  OK
+ld <bcdehla>,<bcdehla>........ld <bcdehla>,<bcdehla>........  OK
+  OK
+ld <bcdexya>,<bcdexya>........ld <bcdexya>,<bcdexya>........  ERROR **** crc expected:  ERROR **** crc expected:447788bbaa3366bb found: found:88008888cc99dd99
+
+ld a,(nnnn) / ld (nnnn),a.....ld a,(nnnn) / ld (nnnn),a.....  OK
+  OK
+ldd<r> (1)....................ldd<r> (1)....................  OK
+  OK
+ldd<r> (2)....................ldd<r> (2)....................  ERROR **** crc expected:  ERROR **** crc expected:3399dddd33ddee11 found: found:55aa990077eedd44
+
+ldi<r> (1)....................ldi<r> (1)....................  ERROR **** crc expected:  ERROR **** crc expected:ff778822bb00dd11 found: found:99aabbddff66bb55
+
+ldi<r> (2)....................ldi<r> (2)....................  ERROR **** crc expected:  ERROR **** crc expected:ee99eeaadd00aaee found: found:eebb5599889911bb
+
+neg...........................neg...........................  ERROR **** crc expected:  ERROR **** crc expected:dd663388dddd66aa found: found:66aa33cc33bbbbdd
+
+<rrd,rld>.....................<rrd,rld>.....................  ERROR **** crc expected:  ERROR **** crc expected:ffff882233ee7777 found: found:995555bbaa332266
+
+<rlca,rrca,rla,rra>...........<rlca,rrca,rla,rra>...........  ERROR **** crc expected:  ERROR **** crc expected:99bbaa33880077cc found: found:225511333300aaee
+
+shf/rot (<ix,iy>+1)...........shf/rot (<ix,iy>+1)...........  ERROR **** crc expected:  ERROR **** crc expected:771100003344ccbb found: found:cc2299dd557722ee
+
+shf/rot <b,c,d,e,h,l,(hl),a>..shf/rot <b,c,d,e,h,l,(hl),a>..  ERROR **** crc expected:  ERROR **** crc expected:aa44225555883333 found: found:dd55ddee11bbddcc
+
+<set,res> n,<bcdehl(hl)a>.....<set,res> n,<bcdehl(hl)a>.....  OK
+  OK
+<set,res> n,(<ix,iy>+1).......<set,res> n,(<ix,iy>+1).......  OK
+  OK
+ld (<ix,iy>+1),<b,c,d,e>......ld (<ix,iy>+1),<b,c,d,e>......  OK
+  OK
+ld (<ix,iy>+1),<h,l>..........ld (<ix,iy>+1),<h,l>..........  OK
+  OK
+ld (<ix,iy>+1),a..............ld (<ix,iy>+1),a..............  OK
+  OK
+ld (<bc,de>),a................ld (<bc,de>),a................  OK
+  OK
+Tests complete
