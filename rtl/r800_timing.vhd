@@ -13,7 +13,8 @@
 --  * internal ROM / external slot : +1 / +2 per access (ROM: no page mode)
 --  * I/O                  : 1 cycle, wait for an even cycle, 6 cycles,
 --                           VDP ports at least 62 cycles apart
---  * refresh              : 25 cycles every 210 (on an even cycle)
+--  * refresh              : 18 cycles every 223 (on an even cycle), from a
+--                           real turbo R (R800BEN; openMSX: 25 every 210)
 --  * a few instructions have internal cycles (table), a taken jump +1
 -- The CPU is held at the T1 of an M1 while it is early, and an I/O access
 -- is held until its exact time. When it is late (an R800 NOP is 1 cycle, a
@@ -187,8 +188,8 @@ begin
 
     -- time at this M1: internal cycles, refresh, limit of the late cycles
     w_v1        <= ff_v + resize( w_extra, 16 ) when( w_prefix = '0' )else ff_v;
-    w_refresh   <= '1' when( w_prefix = '0' and (w_v1 - ff_lref) >= 210 )else '0';
-    w_v2        <= even( w_v1 ) + 25 when( w_refresh = '1' )else w_v1;
+    w_refresh   <= '1' when( w_prefix = '0' and (w_v1 - ff_lref) >= 223 )else '0';
+    w_v2        <= even( w_v1 ) + 18 when( w_refresh = '1' )else w_v1;
     w_v3        <= ff_e - to_unsigned( c_lim, 16 ) when( signed(ff_e - w_v2) > c_lim )else w_v2;
 
     w_stall     <= '1' when( active = '1' and ff_act = '1' and w_t1 = '1' and ff_bnd_done = '0' and
@@ -249,7 +250,7 @@ begin
                     ff_bnd_done <= '1';
                     ff_v <= w_v3;
                     if( w_refresh = '1' )then
-                        ff_lref    <= ff_lref + 210;
+                        ff_lref    <= ff_lref + 223;
                         ff_page_ok <= '0';
                     end if;
                     if( w_prefix = '0' )then
